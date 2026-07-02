@@ -2,8 +2,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("=== Pet Care Management System ===");
-
         Pet pet1 = new Pet(
                 "P001",
                 "Jimi",
@@ -20,7 +18,15 @@ public class Main {
                 "Female"
         );
 
-        pet1.displayPetInfo();
-        pet2.displayPetInfo();
+        Owner owner = new Owner(
+                "O001",
+                "John Perera",
+                "0771234567"
+        );
+
+        owner.addPet(pet1);
+        owner.addPet(pet2);
+
+        owner.displayOwnerInfo();
     }
 }
