@@ -1,6 +1,5 @@
 public class Pet {
 
-
     private String petId;
     private String name;
     private int age;
@@ -15,6 +14,13 @@ public class Pet {
         this.gender = gender;
     }
 
+    public String getPetId() {
+        return petId;
+    }
+
+    public String getName() {
+        return name;
+    }
 
     public void displayPetInfo() {
         System.out.println("------------------------------");

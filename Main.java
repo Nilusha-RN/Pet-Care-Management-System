@@ -2,31 +2,24 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pet pet1 = new Pet(
-                "P001",
-                "Jimi",
-                3,
-                "Golden Retriever",
-                "Male"
-        );
+        PetService petService = new PetService();
 
-        Pet pet2 = new Pet(
-                "P002",
-                "Luna",
-                2,
-                "Persian Cat",
-                "Female"
-        );
+        Pet pet1 = new Pet("P001","Buddy",3,"Golden Retriever","Male");
+        Pet pet2 = new Pet("P002","Luna",2,"Persian Cat","Female");
+        Pet pet3 = new Pet("P003","Max",1,"Beagle","Male");
 
-        Owner owner = new Owner(
-                "O001",
-                "John Perera",
-                "0771234567"
-        );
+        petService.addPet(pet1);
+        petService.addPet(pet2);
+        petService.addPet(pet3);
 
-        owner.addPet(pet1);
-        owner.addPet(pet2);
+        petService.displayAllPets();
 
-        owner.displayOwnerInfo();
+        petService.searchPet("P002");
+
+        petService.removePet("P001");
+
+        petService.displayAllPets();
+
     }
+
 }
