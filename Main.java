@@ -46,6 +46,32 @@ public class Main {
 
         appointmentService.searchAppointment("A001");
 
+
+        MedicalRecordService medicalService = new MedicalRecordService();
+
+        MedicalRecord record1 = new MedicalRecord(
+                        "MR001",
+                        pet1,
+                        "Fever",
+                        "Medicine for 5 days",
+                        "05-07-2026"
+                );
+
+        MedicalRecord record2 = new MedicalRecord(
+                        "MR002",
+                        pet2,
+                        "Skin Allergy",
+                        "Allergy Shampoo",
+                        "18-07-2026"
+                );
+
+        medicalService.addRecord(record1);
+        medicalService.addRecord(record2);
+
+        medicalService.displayAllRecords();
+
+        medicalService.searchRecord("MR002");
+
     }
 
 }
