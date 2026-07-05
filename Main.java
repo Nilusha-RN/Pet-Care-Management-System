@@ -20,6 +20,33 @@ public class Main {
 
         petService.displayAllPets();
 
+        
+        Owner owner = new Owner(
+                "O001",
+                "John Perera",
+                "0771234567"
+        );
+
+        owner.addPet(pet1);
+
+        AppointmentService appointmentService = new AppointmentService();
+
+        Appointment appointment = new Appointment(
+                "A001",
+                pet1,
+                owner,
+                "15-07-2026",
+                "10.00 AM",
+                "Regular Checkup"
+        );
+
+        appointmentService.addAppointment(appointment);
+
+        appointmentService.displayAppointments();
+
+        appointmentService.searchAppointment("A001");
+
     }
 
 }
+

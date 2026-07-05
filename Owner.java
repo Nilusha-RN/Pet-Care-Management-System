@@ -35,4 +35,8 @@ public class Owner {
             pet.displayPetInfo();
         }
     }
+
+    public String getOwnerName() {
+        return ownerName;
+    }
 }
