@@ -1,10 +1,10 @@
 public class Pet {
 
-    private String petId;
-    private String name;
-    private int age;
-    private String breed;
-    private String gender;
+    protected String petId;
+    protected String name;
+    protected int age;
+    protected String breed;
+    protected String gender;
 
     public Pet(String petId, String name, int age, String breed, String gender) {
         this.petId = petId;
@@ -22,7 +22,23 @@ public class Pet {
         return name;
     }
 
-    public void displayPetInfo() {
+    public int getAge() {
+        return age;
+    }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void makeSound() {
+        System.out.println(name + " makes a sound.");
+    }
+
+    public void displayInfo() {
         System.out.println("------------------------------");
         System.out.println("Pet ID : " + petId);
         System.out.println("Name   : " + name);
@@ -30,5 +46,10 @@ public class Pet {
         System.out.println("Breed  : " + breed);
         System.out.println("Gender : " + gender);
         System.out.println("------------------------------");
+    }
+
+    // Keep compatibility with previous days
+    public void displayPetInfo() {
+        displayInfo();
     }
 }
