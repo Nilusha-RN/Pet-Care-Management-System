@@ -1,21 +1,39 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
 
-        
-        Pet pet1 = new Pet("P001", "Buddy", 3, "Golden Retriever", "Male");
+        Scanner scanner = new Scanner(System.in);
 
-        
-        Pet pet2 = new Pet("P002", "", -5, "Persian Cat", "Female");
+        try {
+            System.out.print("Enter Pet ID: ");
+            String id = scanner.nextLine();
 
-        pet1.displayInfo();
-        pet2.displayInfo();
+            System.out.print("Enter Name: ");
+            String name = scanner.nextLine();
 
-        
-        pet1.setName("Max");
-        pet1.setAge(10);
+            System.out.print("Enter Age: ");
+            int age = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("\nAfter updates:");
-        pet1.displayInfo();
+            System.out.print("Enter Breed: ");
+            String breed = scanner.nextLine();
+
+            System.out.print("Enter Gender: ");
+            String gender = scanner.nextLine();
+
+            Pet pet = new Pet(id, name, age, breed, gender);
+
+            System.out.println("\nPet Created Successfully!");
+            pet.displayInfo();
+
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Age must be a number!");
+
+        } catch (Exception e) {
+            System.out.println("Unexpected error: " + e.getMessage());
+        }
+
+        scanner.close();
     }
 }
