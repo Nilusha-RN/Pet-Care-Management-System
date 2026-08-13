@@ -28,7 +28,6 @@ public class Owner {
 
     public void addPet(Pet pet) {
         pets.add(pet);
-        System.out.println("Pet added to owner successfully.");
     }
 
     public void displayOwnerInfo() {
