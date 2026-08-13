@@ -8,8 +8,8 @@ public class Pet {
 
     public Pet(String petId, String name, int age, String breed, String gender) {
         this.petId = petId;
-        this.name = name;
-        this.age = age;
+        setName(name);
+        setAge(age);
         this.breed = breed;
         this.gender = gender;
     }
@@ -32,6 +32,22 @@ public class Pet {
 
     public String getGender() {
         return gender;
+    }
+
+    public void setName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            this.name = "Unknown";
+        } else {
+            this.name = name;
+        }
+    }
+
+    public void setAge(int age) {
+        if (age < 0) {
+            this.age = 0;
+        } else {
+            this.age = age;
+        }
     }
 
     public void makeSound() {

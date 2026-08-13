@@ -1,6 +1,12 @@
 public class Bird extends Pet {
 
-    public Bird(String petId, String name, int age, String breed, String gender) {
+    public Bird(
+        protected String petId;
+        protected String name;
+        protected int age;
+        protected String breed;
+        protected String gender;
+    ) {
         super(petId, name, age, breed, gender);
     }
 
