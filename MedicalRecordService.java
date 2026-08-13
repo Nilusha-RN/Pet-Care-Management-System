@@ -9,33 +9,32 @@ public class MedicalRecordService {
     }
 
     public void addRecord(MedicalRecord record) {
-
         records.add(record);
         System.out.println("Medical record added successfully.");
     }
 
     public void displayAllRecords() {
 
-        if(records.isEmpty()){
-
+        if (records.isEmpty()) {
             System.out.println("No medical records available.");
             return;
         }
 
         System.out.println("\n===== Medical Records =====");
 
-        for(MedicalRecord record : records){
-
+        for (MedicalRecord record : records) {
             record.displayRecord();
         }
     }
 
-    public void searchRecord(String recordId){
+    public void searchRecord(String recordId) {
 
-        for(MedicalRecord record : records){
+        for (MedicalRecord record : records) {
 
-            if(record.getRecordId().equalsIgnoreCase(recordId)){
+            if (record.getRecordId()
+                    .equalsIgnoreCase(recordId)) {
 
+                System.out.println("\n===== Record Found =====");
                 record.displayRecord();
                 return;
             }
@@ -43,5 +42,4 @@ public class MedicalRecordService {
 
         System.out.println("Medical record not found.");
     }
-
 }

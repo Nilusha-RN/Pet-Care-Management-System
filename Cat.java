@@ -1,11 +1,6 @@
 public class Cat extends Pet {
 
-    public Cat(String petId,
-               String name,
-               int age,
-               String breed,
-               String gender) {
-
+    public Cat(String petId, String name, int age, String breed, String gender) {
         super(petId, name, age, breed, gender);
     }
 

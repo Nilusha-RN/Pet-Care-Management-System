@@ -2,63 +2,38 @@ import java.util.ArrayList;
 
 public class PetService {
 
-    private ArrayList<Pet> petList;
+    private ArrayList<Pet> pets;
 
     public PetService() {
-        petList = new ArrayList<>();
+        pets = new ArrayList<>();
     }
 
-    // Add Pet
     public void addPet(Pet pet) {
-        petList.add(pet);
-        System.out.println(pet.getName() + " added successfully.");
+        pets.add(pet);
+        System.out.println("Pet added successfully.");
     }
 
-    // Display All Pets
     public void displayAllPets() {
 
-        if (petList.isEmpty()) {
+        if (pets.isEmpty()) {
             System.out.println("No pets available.");
             return;
         }
 
-        System.out.println("\n===== Pet List =====");
+        System.out.println("\n===== All Pets =====");
 
-        for (Pet pet : petList) {
-            pet.displayPetInfo();
+        for (Pet pet : pets) {
+            pet.displayInfo();
         }
     }
 
-    // Search Pet
     public void searchPet(String petId) {
 
-        boolean found = false;
-
-        for (Pet pet : petList) {
+        for (Pet pet : pets) {
 
             if (pet.getPetId().equalsIgnoreCase(petId)) {
-
-                System.out.println("\nPet Found");
-                pet.displayPetInfo();
-                found = true;
-                break;
-            }
-        }
-
-        if (!found) {
-            System.out.println("Pet not found.");
-        }
-    }
-
-    // Remove Pet
-    public void removePet(String petId) {
-
-        for (Pet pet : petList) {
-
-            if (pet.getPetId().equalsIgnoreCase(petId)) {
-
-                petList.remove(pet);
-                System.out.println("Pet removed successfully.");
+                System.out.println("\n===== Pet Found =====");
+                pet.displayInfo();
                 return;
             }
         }
@@ -66,4 +41,16 @@ public class PetService {
         System.out.println("Pet not found.");
     }
 
+    public void removePet(String petId) {
+
+        boolean removed = pets.removeIf(
+                pet -> pet.getPetId().equalsIgnoreCase(petId)
+        );
+
+        if (removed) {
+            System.out.println("Pet removed successfully.");
+        } else {
+            System.out.println("Pet not found.");
+        }
+    }
 }

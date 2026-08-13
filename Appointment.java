@@ -9,7 +9,6 @@ public class Appointment {
 
     public Appointment(String appointmentId, Pet pet, Owner owner,
                        String date, String time, String reason) {
-
         this.appointmentId = appointmentId;
         this.pet = pet;
         this.owner = owner;
@@ -23,13 +22,13 @@ public class Appointment {
     }
 
     public void displayAppointment() {
-
-        System.out.println("==============================");
-        System.out.println("Appointment ID : " + appointmentId);
-        System.out.println("Pet            : " + pet.getName());
-        System.out.println("Date           : " + date);
-        System.out.println("Time           : " + time);
-        System.out.println("Reason         : " + reason);
-        System.out.println("==============================");
+        System.out.println("\n===== Appointment Details =====");
+        System.out.println("Appointment ID: " + appointmentId);
+        System.out.println("Date: " + date + "  Time: " + time);
+        System.out.println("Reason: " + reason);
+        System.out.println("Pet Details:");
+        pet.displayInfo();
+        System.out.println("Owner Details:");
+        owner.displayOwnerInfo();
     }
 }

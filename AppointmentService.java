@@ -9,7 +9,6 @@ public class AppointmentService {
     }
 
     public void addAppointment(Appointment appointment) {
-
         appointments.add(appointment);
         System.out.println("Appointment booked successfully.");
     }
@@ -21,7 +20,7 @@ public class AppointmentService {
             return;
         }
 
-        System.out.println("\n===== Appointment List =====");
+        System.out.println("\n===== Appointments =====");
 
         for (Appointment appointment : appointments) {
             appointment.displayAppointment();
@@ -32,7 +31,8 @@ public class AppointmentService {
 
         for (Appointment appointment : appointments) {
 
-            if (appointment.getAppointmentId().equalsIgnoreCase(id)) {
+            if (appointment.getAppointmentId()
+                    .equalsIgnoreCase(id)) {
 
                 appointment.displayAppointment();
                 return;
@@ -44,17 +44,16 @@ public class AppointmentService {
 
     public void cancelAppointment(String id) {
 
-        for (Appointment appointment : appointments) {
+        boolean removed = appointments.removeIf(
+                appointment ->
+                        appointment.getAppointmentId()
+                                .equalsIgnoreCase(id)
+        );
 
-            if (appointment.getAppointmentId().equalsIgnoreCase(id)) {
-
-                appointments.remove(appointment);
-                System.out.println("Appointment cancelled.");
-                return;
-            }
+        if (removed) {
+            System.out.println("Appointment cancelled.");
+        } else {
+            System.out.println("Appointment not found.");
         }
-
-        System.out.println("Appointment not found.");
     }
-
 }
