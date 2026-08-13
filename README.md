@@ -62,28 +62,5 @@ java Main
 - `ReportService.java` - System reports
 - `InputValidator.java` - Input validation
 - `Main.java` - Main application
-
-## Author
-
-R.A.N.N. Rathwaththe
-
----
-
-## Suggested GitHub commit flow
-
-Commit changes across the project in small, meaningful steps. Example timeline:
-
-- Day 7: `git commit -m "Add encapsulation and data validation"`
-- Day 8: `git commit -m "Add exception handling and input validation"`
-- Day 9: `git commit -m "Add pet care reports and system analytics"`
-- Day 10 — FINAL: `git commit -m "Complete Pet Care Management System"`
-
-Tag final release:
-
-```bash
-git tag v1.0.0
 git push origin v1.0.0
-```
-
-
-**Project status**: Pet Care Management System — v1.0.0 COMPLETE ✅
+- `Main.java` - Main application
